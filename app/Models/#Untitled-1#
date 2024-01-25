@@ -1,0 +1,25 @@
+Route::post('/dashboard/location_filter', [HomeController::class,'location_filter'])->name('dashboard.location_filter')->middleware(['auth','XSS']);
+Route::post('/dashboard/location_filter', ['as' => 'dashboard.location_filter','uses' => 'HomeController@location_filter'])->middleware(['auth','XSS']);
+
+
+
+Route::resource('/dashboard', HomeController::class)->middleware(['auth','XSS']);
+Route::post('dayview_filter', [DailyViewController::class,'dayview_filter'])->name('dayview_filter')->middleware(['XSS']);
+Route::resource('/day', DailyViewController::class)->middleware(['auth','XSS']);
+Route::post('userviewfilter', [UserViewController::class,'userviewfilter'])->name('userviewfilter')->middleware(['XSS']);
+
+
+Route::resource('/user-view', UserViewController::class)->middleware(['auth','XSS']);
+Route::resource('/user-view', 'UserViewController')->middleware(['auth','XSS']);
+
+
+
+
+
+
+
+
+
+Route::resource('/year', 'YearlyViewController')->middleware(['auth', 'XSS']);
+
+Route::resource('/year', YearlyViewController::class)->middleware(['auth','XSS']);

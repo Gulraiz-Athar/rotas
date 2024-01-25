@@ -1,0 +1,1 @@
+<?php /**PATH C:\xampp\htdocs\sandbox\resources\views/partision/sidesetting.blade.php ENDPATH**/ ?>
